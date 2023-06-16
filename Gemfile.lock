@@ -11,13 +11,6 @@ GIT
       rubocop
       smart_properties
 
-GIT
-  remote: https://github.com/ffi/ffi.git
-  revision: 73c36d77d76ef681cade4c4024abfe73af8a38b6
-  submodules: true
-  specs:
-    ffi (1.15.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -151,6 +144,7 @@ GEM
       railties (>= 5.0.0)
     faker (2.23.0)
       i18n (>= 1.8.11, < 2)
+    ffi (1.15.5)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
     formtastic_i18n (0.7.0)
@@ -381,7 +375,6 @@ DEPENDENCIES
   erb_lint!
   factory_bot_rails
   faker (~> 2.19)
-  ffi!
   honeybadger
   jbuilder (>= 2.7)
   letter_opener
