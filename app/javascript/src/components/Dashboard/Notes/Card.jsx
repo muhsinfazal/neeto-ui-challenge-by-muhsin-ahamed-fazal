@@ -12,6 +12,7 @@ const Card = ({
   description,
   tag = DEFAULT_TAG,
   created_at: createdAt,
+  setShowDeleteAlert,
 }) => {
   const { t } = useTranslation();
 
@@ -28,7 +29,9 @@ const Card = ({
             position="bottom-end"
           >
             <li>{t("notes.card.edit")}</li>
-            <li>{t("notes.card.delete")}</li>
+            <li onClick={() => setShowDeleteAlert(true)}>
+              {t("notes.card.delete")}
+            </li>
           </Dropdown>
         </div>
         <Typography className="neeto-ui-text-gray-600" style="body2">

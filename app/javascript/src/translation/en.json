@@ -9,6 +9,13 @@
       "createdAt": "Created {{relativeDate}}",
       "edit": "Edit",
       "delete": "Delete"
+    },
+    "alert": {
+      "delete": {
+        "title": "Delete Note",
+        "message": "Are you sure you want to delete the note? This action cannot be undone.",
+        "successMessage": "Note deleted successfully."
+      }
     }
   }
 }
