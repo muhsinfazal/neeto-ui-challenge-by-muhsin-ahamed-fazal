@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Delete } from "neetoicons";
+import { Delete, Plus } from "neetoicons";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header, SubHeader } from "neetoui/layouts";
+import { useTranslation } from "react-i18next";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/commons/EmptyState";
@@ -19,6 +20,8 @@ const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetchNotes();
@@ -45,17 +48,18 @@ const Notes = () => {
   return (
     <Container>
       <Header
-        title="Notes"
+        title={t("notes.header.title")}
         actionBlock={
           <Button
-            icon="ri-add-line"
-            label="Add new note"
+            icon={Plus}
+            label={t("notes.header.add")}
             size="small"
             onClick={() => setShowNewNotePane(true)}
           />
         }
         searchProps={{
           value: searchTerm,
+          placeholder: t("notes.header.searchPlaceholder"),
           onChange: e => setSearchTerm(e.target.value),
         }}
       />
