@@ -4,13 +4,13 @@ import { Clock, MenuVertical } from "neetoicons";
 import { Typography, Tag, Avatar, Tooltip, Dropdown } from "neetoui";
 import { useTranslation } from "react-i18next";
 
-import { DEFAULT_TAG } from "./constants";
+import { TAGS } from "./Pane/Form/constants";
 import { formatCreationDate } from "./utils";
 
 const Card = ({
   title,
   description,
-  tag = DEFAULT_TAG,
+  tag = TAGS[0].label,
   created_at: createdAt,
   setShowDeleteAlert,
 }) => {
