@@ -26,6 +26,13 @@
       "success": {
         "create": "{{entity}} added successfully."
       }
+    },
+    "alert": {
+      "delete": {
+        "title": "Delete {{entity}}",
+        "message": "Are you sure you want to delete the {{entity}}? This action cannot be undone.",
+        "successMessage": "{{entity}} deleted successfully."
+      }
     }
   },
   "notes": {
@@ -34,13 +41,6 @@
     },
     "card": {
       "createdAt": "Created {{relativeDate}}"
-    },
-    "alert": {
-      "delete": {
-        "title": "Delete Note",
-        "message": "Are you sure you want to delete the note? This action cannot be undone.",
-        "successMessage": "Note deleted successfully."
-      }
     },
     "form": {
       "fields": {

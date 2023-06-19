@@ -5,6 +5,8 @@ import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 import { useTranslation } from "react-i18next";
 
+import DeleteAlert from "components/commons/DeleteAlert";
+
 import NewContactPane from "./Pane/Create";
 import Table from "./Table";
 
@@ -12,6 +14,7 @@ const Contacts = () => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [isPaneOpen, setIsPaneOpen] = useState(false);
+  const [isShowDeleteAlert, setIsShowDeleteAlert] = useState(false);
 
   return (
     <Container>
@@ -31,10 +34,15 @@ const Contacts = () => {
           onChange: e => setSearchTerm(e.target.value),
         }}
       />
-      <Table />
+      <Table setIsShowDeleteAlert={setIsShowDeleteAlert} />
       <NewContactPane
         isPaneOpen={isPaneOpen}
         onClose={() => setIsPaneOpen(false)}
+      />
+      <DeleteAlert
+        entity="Contact"
+        isOpen={isShowDeleteAlert}
+        onClose={() => setIsShowDeleteAlert(false)}
       />
     </Container>
   );

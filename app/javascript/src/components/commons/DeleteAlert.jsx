@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import { Alert, Toastr } from "neetoui";
 import { useTranslation } from "react-i18next";
 
-const DeleteAlert = ({ isOpen, onClose }) => {
+const DeleteAlert = ({ isOpen, entity, onClose }) => {
   const { t } = useTranslation();
   const [deleting, setDeleting] = useState(false);
 
   const handleDelete = async () => {
     try {
       setDeleting(true);
-      Toastr.success(t("notes.alert.delete.successMessage"));
+      Toastr.success(t("common.alert.delete.successMessage", { entity }));
     } catch (error) {
       logger.error(error);
     } finally {
@@ -23,9 +23,11 @@ const DeleteAlert = ({ isOpen, onClose }) => {
     <Alert
       isOpen={isOpen}
       isSubmitting={deleting}
-      message={t("notes.alert.delete.message")}
       size="large"
-      title={t("notes.alert.delete.title")}
+      title={t("common.alert.delete.title", { entity })}
+      message={t("common.alert.delete.message", {
+        entity: entity.toLowerCase(),
+      })}
       onClose={onClose}
       onSubmit={handleDelete}
     />
