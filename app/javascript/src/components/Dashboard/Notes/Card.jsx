@@ -28,9 +28,9 @@ const Card = ({
             icon={MenuVertical}
             position="bottom-end"
           >
-            <li>{t("notes.card.edit")}</li>
+            <li>{t("common.actionDropdown.edit")}</li>
             <li onClick={() => setShowDeleteAlert(true)}>
-              {t("notes.card.delete")}
+              {t("common.actionDropdown.delete")}
             </li>
           </Dropdown>
         </div>
