@@ -2,6 +2,7 @@ import React from "react";
 
 import { MenuHorizontal } from "@bigbinary/neeto-icons";
 import { Dropdown } from "@bigbinary/neetoui";
+import { t } from "i18next";
 
 import Profile from "./Profile";
 
@@ -36,8 +37,12 @@ export const COLUMNS = [
     render: () => (
       <Dropdown buttonStyle="text" icon={MenuHorizontal}>
         <Dropdown.Menu>
-          <Dropdown.MenuItem.Button>Edit</Dropdown.MenuItem.Button>
-          <Dropdown.MenuItem.Button>Delete</Dropdown.MenuItem.Button>
+          <Dropdown.MenuItem.Button>
+            {t("common.actionDropdown.edit")}
+          </Dropdown.MenuItem.Button>
+          <Dropdown.MenuItem.Button>
+            {t("common.actionDropdown.delete")}
+          </Dropdown.MenuItem.Button>
         </Dropdown.Menu>
       </Dropdown>
     ),

@@ -19,7 +19,7 @@ const Contacts = () => {
           <Button icon={Plus} label={t("contacts.header.add")} size="small" />
         }
         searchProps={{
-          placeholder: t("contacts.header.searchPlaceholder"),
+          placeholder: t("common.header.searchPlaceholder"),
           value: searchTerm,
           onChange: e => setSearchTerm(e.target.value),
         }}

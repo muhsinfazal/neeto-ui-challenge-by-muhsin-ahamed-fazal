@@ -1,14 +1,20 @@
 {
+  "common": {
+    "header": {
+      "searchPlaceholder": "Search Name, Email, Phone Number, Etc..."
+    },
+    "actionDropdown": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
   "notes": {
     "header": {
       "title": "Notes",
-      "searchPlaceholder": "Search Name, Email, Phone Number, Etc...",
       "add": "Add Note"
     },
     "card": {
-      "createdAt": "Created {{relativeDate}}",
-      "edit": "Edit",
-      "delete": "Delete"
+      "createdAt": "Created {{relativeDate}}"
     },
     "alert": {
       "delete": {
@@ -49,7 +55,6 @@
   "contacts": {
     "header": {
       "title": "Contacts",
-      "searchPlaceholder": "Search Name, Email, Phone Number, Etc...",
       "add": "Add Contact"
     },
     "owner": "Owner"
