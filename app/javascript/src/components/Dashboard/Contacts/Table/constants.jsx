@@ -15,7 +15,7 @@ export const CONTACTS = CONTACTS_COUNT.map((_, contact_index) => ({
   createdAt: "Feb, 5, 2021",
 }));
 
-export const COLUMNS = [
+export const COLUMNS = ({ setIsShowDeleteAlert }) => [
   {
     title: "Name & Role",
     dataIndex: "name",
@@ -40,7 +40,7 @@ export const COLUMNS = [
           <Dropdown.MenuItem.Button>
             {t("common.actionDropdown.edit")}
           </Dropdown.MenuItem.Button>
-          <Dropdown.MenuItem.Button>
+          <Dropdown.MenuItem.Button onClick={() => setIsShowDeleteAlert(true)}>
             {t("common.actionDropdown.delete")}
           </Dropdown.MenuItem.Button>
         </Dropdown.Menu>

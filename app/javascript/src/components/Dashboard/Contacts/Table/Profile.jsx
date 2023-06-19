@@ -17,7 +17,7 @@ const Profile = ({ name }) => {
       <span>
         <Typography style="h5">{name}</Typography>
         <Typography className="neeto-ui-text-gray-600" style="body3">
-          {t("contacts.owner")}
+          {t("entity.owner")}
         </Typography>
       </span>
     </div>

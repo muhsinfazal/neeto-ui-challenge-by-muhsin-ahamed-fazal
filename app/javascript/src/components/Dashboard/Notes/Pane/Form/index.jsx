@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Formik, Form as FormikForm } from "formik";
+import { Check } from "neetoicons";
 import { Button, Pane } from "neetoui";
 import { Input, Textarea, Select } from "neetoui/formik";
 import { useTranslation } from "react-i18next";
@@ -72,14 +73,16 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
             <Button
               className="mr-3"
               disabled={isSubmitting}
-              label={t("notes.form.submit")}
+              icon={Check}
+              label={t("common.form.submit")}
               loading={isSubmitting}
               style="primary"
               type="submit"
             />
             <Button
-              label={t("notes.form.cancel")}
+              label={t("common.form.cancel")}
               style="text"
+              type="reset"
               onClick={onClose}
             />
           </Pane.Footer>

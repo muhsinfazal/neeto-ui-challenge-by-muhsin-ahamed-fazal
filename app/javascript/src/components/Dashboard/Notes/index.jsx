@@ -7,9 +7,9 @@ import { Container, Header } from "neetoui/layouts";
 import { useTranslation } from "react-i18next";
 
 import notesApi from "apis/notes";
+import DeleteAlert from "components/commons/DeleteAlert";
 import EmptyState from "components/commons/EmptyState";
 
-import DeleteAlert from "./DeleteAlert";
 import List from "./List";
 import NewNotePane from "./Pane/Create";
 
@@ -51,7 +51,7 @@ const Notes = () => {
         actionBlock={
           <Button
             icon={Plus}
-            label={t("notes.header.add")}
+            label={t("common.header.add", { entity: "Note" })}
             size="small"
             onClick={() => setShowNewNotePane(true)}
           />
@@ -79,6 +79,7 @@ const Notes = () => {
         showPane={showNewNotePane}
       />
       <DeleteAlert
+        entity="Note"
         isOpen={showDeleteAlert}
         onClose={() => setShowDeleteAlert(false)}
       />
