@@ -51,7 +51,7 @@ const Notes = () => {
         actionBlock={
           <Button
             icon={Plus}
-            label={t("notes.header.add")}
+            label={t("common.header.add", { entity: "Note" })}
             size="small"
             onClick={() => setShowNewNotePane(true)}
           />

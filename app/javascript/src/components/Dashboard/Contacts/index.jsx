@@ -5,18 +5,25 @@ import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 import { useTranslation } from "react-i18next";
 
+import NewContactPane from "./Pane/Create";
 import Table from "./Table";
 
 const Contacts = () => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
+  const [isPaneOpen, setIsPaneOpen] = useState(false);
 
   return (
     <Container>
       <Header
         title={t("contacts.header.title")}
         actionBlock={
-          <Button icon={Plus} label={t("contacts.header.add")} size="small" />
+          <Button
+            icon={Plus}
+            label={t("common.header.add", { entity: "Contact" })}
+            size="small"
+            onClick={() => setIsPaneOpen(true)}
+          />
         }
         searchProps={{
           placeholder: t("common.header.searchPlaceholder"),
@@ -25,6 +32,10 @@ const Contacts = () => {
         }}
       />
       <Table />
+      <NewContactPane
+        isPaneOpen={isPaneOpen}
+        onClose={() => setIsPaneOpen(false)}
+      />
     </Container>
   );
 };
