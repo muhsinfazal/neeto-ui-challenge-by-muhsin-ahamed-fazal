@@ -4,6 +4,8 @@ import { Clock, MenuVertical } from "neetoicons";
 import { Typography, Tag, Avatar, Tooltip, Dropdown } from "neetoui";
 import { useTranslation } from "react-i18next";
 
+import { AVATAR_IMAGE_URL } from "components/constants";
+
 import { TAGS } from "./Pane/Form/constants";
 import { formatCreationDate } from "./utils";
 
@@ -47,10 +49,7 @@ const Card = ({
               {t("notes.card.createdAt", { relativeDate })}
             </Typography>
           </Tooltip>
-          <Avatar
-            size="small"
-            user={{ imageUrl: "https://i.pravatar.cc/300" }}
-          />
+          <Avatar size="small" user={{ imageUrl: AVATAR_IMAGE_URL }} />
         </div>
       </div>
     </div>
