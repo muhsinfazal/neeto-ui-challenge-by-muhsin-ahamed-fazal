@@ -14,7 +14,7 @@ const Card = ({
   description,
   tag = TAGS[0].label,
   created_at: createdAt,
-  setShowDeleteAlert,
+  setIsShowDeleteAlert,
 }) => {
   const { t } = useTranslation();
 
@@ -31,7 +31,7 @@ const Card = ({
             position="bottom-end"
           >
             <li>{t("common.actionDropdown.edit")}</li>
-            <li onClick={() => setShowDeleteAlert(true)}>
+            <li onClick={() => setIsShowDeleteAlert(true)}>
               {t("common.actionDropdown.delete")}
             </li>
           </Dropdown>
