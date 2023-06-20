@@ -34,7 +34,7 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <FormikForm className="w-full">
+        <FormikForm noValidate className="w-full">
           <Pane.Body className="space-y-6">
             <Input
               required

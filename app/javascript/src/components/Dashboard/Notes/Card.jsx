@@ -4,6 +4,8 @@ import { Clock, MenuVertical } from "neetoicons";
 import { Typography, Tag, Avatar, Tooltip, Dropdown } from "neetoui";
 import { useTranslation } from "react-i18next";
 
+import { AVATAR_IMAGE_URL } from "components/constants";
+
 import { TAGS } from "./Pane/Form/constants";
 import { formatCreationDate } from "./utils";
 
@@ -12,7 +14,7 @@ const Card = ({
   description,
   tag = TAGS[0].label,
   created_at: createdAt,
-  setShowDeleteAlert,
+  setIsShowDeleteAlert,
 }) => {
   const { t } = useTranslation();
 
@@ -29,7 +31,7 @@ const Card = ({
             position="bottom-end"
           >
             <li>{t("common.actionDropdown.edit")}</li>
-            <li onClick={() => setShowDeleteAlert(true)}>
+            <li onClick={() => setIsShowDeleteAlert(true)}>
               {t("common.actionDropdown.delete")}
             </li>
           </Dropdown>
@@ -47,10 +49,7 @@ const Card = ({
               {t("notes.card.createdAt", { relativeDate })}
             </Typography>
           </Tooltip>
-          <Avatar
-            size="small"
-            user={{ imageUrl: "https://i.pravatar.cc/300" }}
-          />
+          <Avatar size="small" user={{ imageUrl: AVATAR_IMAGE_URL }} />
         </div>
       </div>
     </div>

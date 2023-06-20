@@ -3,6 +3,8 @@ import React from "react";
 import { Typography, Avatar } from "neetoui";
 import { useTranslation } from "react-i18next";
 
+import { AVATAR_IMAGE_URL } from "components/constants";
+
 const Profile = ({ name }) => {
   const { t } = useTranslation();
 
@@ -11,7 +13,7 @@ const Profile = ({ name }) => {
       <Avatar
         user={{
           name,
-          imageUrl: name === "Jacob Jones" ? "https://i.pravatar.cc/300" : "",
+          imageUrl: name === "Jacob Jones" ? AVATAR_IMAGE_URL : "",
         }}
       />
       <span>

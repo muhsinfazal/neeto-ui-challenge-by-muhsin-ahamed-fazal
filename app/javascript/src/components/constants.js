@@ -11,3 +11,5 @@ export const FEATURE_LIST = [
   "Performs background job processing 'inline' for heroku env. It means heroku can deliver emails.",
   "Letter opener gem for development.",
 ];
+
+export const AVATAR_IMAGE_URL = "https://i.pravatar.cc/300";

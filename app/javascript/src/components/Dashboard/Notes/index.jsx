@@ -14,9 +14,9 @@ import List from "./List";
 import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
-  const [loading, setLoading] = useState(true);
-  const [showNewNotePane, setShowNewNotePane] = useState(false);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isShowNewNotePane, setIsShowNewNotePane] = useState(false);
+  const [isShowDeleteAlert, setIsShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [notes, setNotes] = useState([]);
 
@@ -28,7 +28,7 @@ const Notes = () => {
 
   const fetchNotes = async () => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       const {
         data: { notes },
       } = await notesApi.fetch();
@@ -36,11 +36,11 @@ const Notes = () => {
     } catch (error) {
       logger.error(error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
-  if (loading) {
+  if (isLoading) {
     return <PageLoader />;
   }
 
@@ -53,7 +53,7 @@ const Notes = () => {
             icon={Plus}
             label={t("common.header.add", { entity: "Note" })}
             size="small"
-            onClick={() => setShowNewNotePane(true)}
+            onClick={() => setIsShowNewNotePane(true)}
           />
         }
         searchProps={{
@@ -63,11 +63,11 @@ const Notes = () => {
         }}
       />
       {notes.length ? (
-        <List notes={notes} setShowDeleteAlert={setShowDeleteAlert} />
+        <List notes={notes} setIsShowDeleteAlert={setIsShowDeleteAlert} />
       ) : (
         <EmptyState
           image={EmptyNotesListImage}
-          primaryAction={() => setShowNewNotePane(true)}
+          primaryAction={() => setIsShowNewNotePane(true)}
           primaryActionLabel="Add new note"
           subtitle="Add your notes to send customized emails to them."
           title="Looks like you don't have any notes!"
@@ -75,13 +75,13 @@ const Notes = () => {
       )}
       <NewNotePane
         fetchNotes={fetchNotes}
-        setShowPane={setShowNewNotePane}
-        showPane={showNewNotePane}
+        setShowPane={setIsShowNewNotePane}
+        showPane={isShowNewNotePane}
       />
       <DeleteAlert
         entity="Note"
-        isOpen={showDeleteAlert}
-        onClose={() => setShowDeleteAlert(false)}
+        isOpen={isShowDeleteAlert}
+        onClose={() => setIsShowDeleteAlert(false)}
       />
     </Container>
   );
