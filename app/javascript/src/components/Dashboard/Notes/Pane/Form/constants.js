@@ -26,7 +26,7 @@ export const VALIDATION_SCHEMA = yup.object().shape({
       })
     ),
   assignedContact: yup
-    .object()
+    .object({ label: yup.string(), value: yup.string() })
     .required(
       t("common.form.errors.required", {
         field: t("notes.form.fields.assignedContact.label"),
@@ -35,7 +35,7 @@ export const VALIDATION_SCHEMA = yup.object().shape({
     .nullable(),
   tags: yup
     .array()
-    .of(yup.object())
+    .of(yup.object({ label: yup.string(), value: yup.string() }))
     .min(
       1,
       t("common.form.errors.required", {

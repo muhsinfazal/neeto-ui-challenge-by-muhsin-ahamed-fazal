@@ -34,7 +34,10 @@ export const VALIDATION_SCHEMA = yup.object({
       })
     ),
   role: yup
-    .object()
+    .object({
+      label: yup.string(),
+      value: yup.string(),
+    })
     .required(
       t("common.form.errors.required", {
         field: t("contacts.form.fields.role.label"),
