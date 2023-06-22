@@ -59,7 +59,7 @@ const Notes = () => {
         searchProps={{
           value: searchTerm,
           placeholder: t("common.header.searchPlaceholder"),
-          onChange: e => setSearchTerm(e.target.value),
+          onChange: event => setSearchTerm(event.target.value),
         }}
       />
       {notes.length ? (

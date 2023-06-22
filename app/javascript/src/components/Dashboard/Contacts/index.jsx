@@ -32,7 +32,7 @@ const Contacts = () => {
         searchProps={{
           placeholder: t("common.header.searchPlaceholder"),
           value: searchTerm,
-          onChange: e => setSearchTerm(e.target.value),
+          onChange: event => setSearchTerm(event.target.value),
         }}
       />
       <Table setIsShowDeleteAlert={setIsShowDeleteAlert} />
