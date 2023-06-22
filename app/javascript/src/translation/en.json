@@ -56,7 +56,7 @@
         },
         "assignedContact": {
           "label": "Assigned Contact",
-          "placeholder": "Select role"
+          "placeholder": "Select contact"
         },
         "tags": {
           "label": "Tags",
