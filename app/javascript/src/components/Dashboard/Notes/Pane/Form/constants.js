@@ -12,19 +12,36 @@ export const VALIDATION_SCHEMA = yup.object().shape({
   title: yup
     .string()
     .trim()
-    .required(t("common.form.errors.required", { field: "Title" })),
+    .required(
+      t("common.form.errors.required", {
+        field: t("notes.form.fields.title.label"),
+      })
+    ),
   description: yup
     .string()
     .trim()
-    .required(t("common.form.errors.required", { field: "Description" })),
+    .required(
+      t("common.form.errors.required", {
+        field: t("notes.form.fields.description.label"),
+      })
+    ),
   assignedContact: yup
     .object()
-    .required(t("common.form.errors.required", { field: "Assigned Contact" }))
+    .required(
+      t("common.form.errors.required", {
+        field: t("notes.form.fields.assignedContact.label"),
+      })
+    )
     .nullable(),
   tags: yup
     .array()
     .of(yup.object())
-    .min(1, t("common.form.errors.required", { field: "Tag" })),
+    .min(
+      1,
+      t("common.form.errors.required", {
+        field: t("notes.form.fields.tags.label"),
+      })
+    ),
 });
 
 export const TAGS = [
