@@ -14,13 +14,13 @@ import List from "./List";
 import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
+  const { t } = useTranslation();
+
   const [isLoading, setIsLoading] = useState(true);
   const [isShowNewNotePane, setIsShowNewNotePane] = useState(false);
   const [isShowDeleteAlert, setIsShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [notes, setNotes] = useState([]);
-
-  const { t } = useTranslation();
 
   useEffect(() => {
     fetchNotes();

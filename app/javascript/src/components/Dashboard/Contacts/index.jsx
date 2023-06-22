@@ -12,6 +12,7 @@ import Table from "./Table";
 
 const Contacts = () => {
   const { t } = useTranslation();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [isPaneOpen, setIsPaneOpen] = useState(false);
   const [isShowDeleteAlert, setIsShowDeleteAlert] = useState(false);
