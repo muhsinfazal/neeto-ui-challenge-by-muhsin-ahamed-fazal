@@ -12,18 +12,37 @@ export const VALIDATION_SCHEMA = yup.object({
   firstName: yup
     .string()
     .trim()
-    .required(t("common.form.errors.required", { field: "First Name" })),
+    .required(
+      t("common.form.errors.required", {
+        field: t("contacts.form.fields.firstName.label"),
+      })
+    ),
   lastName: yup
     .string()
     .trim()
-    .required(t("common.form.errors.required", { field: "Last Name" })),
+    .required(
+      t("common.form.errors.required", {
+        field: t("contacts.form.fields.lastName.label"),
+      })
+    ),
   email: yup
     .string()
     .email(t("common.form.errors.invalidEmail"))
-    .required(t("common.form.errors.required", { field: "Email" })),
+    .required(
+      t("common.form.errors.required", {
+        field: t("contacts.form.fields.email.label"),
+      })
+    ),
   role: yup
-    .object()
-    .required(t("common.form.errors.required", { field: "Role" }))
+    .object({
+      label: yup.string(),
+      value: yup.string(),
+    })
+    .required(
+      t("common.form.errors.required", {
+        field: t("contacts.form.fields.role.label"),
+      })
+    )
     .nullable(),
 });
 

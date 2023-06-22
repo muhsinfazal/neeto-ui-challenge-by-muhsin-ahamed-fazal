@@ -70,7 +70,7 @@ const Email = () => {
                 loading={isSubmitting}
                 size="small"
                 type="submit"
-                onClick={e => promptPassword(e, validateForm)}
+                onClick={event => promptPassword(event, validateForm)}
               />
             </Form>
           )}

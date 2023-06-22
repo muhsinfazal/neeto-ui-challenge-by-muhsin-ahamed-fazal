@@ -12,6 +12,7 @@ import Table from "./Table";
 
 const Contacts = () => {
   const { t } = useTranslation();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [isPaneOpen, setIsPaneOpen] = useState(false);
   const [isShowDeleteAlert, setIsShowDeleteAlert] = useState(false);
@@ -23,7 +24,7 @@ const Contacts = () => {
         actionBlock={
           <Button
             icon={Plus}
-            label={t("common.header.add", { entity: "Contact" })}
+            label={t("common.header.add", { entity: t("entity.contact") })}
             size="small"
             onClick={() => setIsPaneOpen(true)}
           />
@@ -31,7 +32,7 @@ const Contacts = () => {
         searchProps={{
           placeholder: t("common.header.searchPlaceholder"),
           value: searchTerm,
-          onChange: e => setSearchTerm(e.target.value),
+          onChange: event => setSearchTerm(event.target.value),
         }}
       />
       <Table setIsShowDeleteAlert={setIsShowDeleteAlert} />
@@ -40,7 +41,7 @@ const Contacts = () => {
         onClose={() => setIsPaneOpen(false)}
       />
       <DeleteAlert
-        entity="Contact"
+        entity={t("entity.contact")}
         isOpen={isShowDeleteAlert}
         onClose={() => setIsShowDeleteAlert(false)}
       />

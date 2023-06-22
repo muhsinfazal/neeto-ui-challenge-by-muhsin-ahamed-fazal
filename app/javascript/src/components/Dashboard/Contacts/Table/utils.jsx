@@ -4,18 +4,30 @@ import { MenuHorizontal } from "@bigbinary/neeto-icons";
 import { Dropdown } from "@bigbinary/neetoui";
 import { t } from "i18next";
 
+import { CONTACTS_COUNT } from "./constants";
 import Profile from "./Profile";
 
-const CONTACTS_COUNT = [...Array(9).keys()];
+const renderActionDropdown = setIsShowDeleteAlert => (
+  <Dropdown buttonStyle="text" icon={MenuHorizontal}>
+    <Dropdown.Menu>
+      <Dropdown.MenuItem.Button>
+        {t("common.actionDropdown.edit")}
+      </Dropdown.MenuItem.Button>
+      <Dropdown.MenuItem.Button onClick={() => setIsShowDeleteAlert(true)}>
+        {t("common.actionDropdown.delete")}
+      </Dropdown.MenuItem.Button>
+    </Dropdown.Menu>
+  </Dropdown>
+);
 
-export const CONTACTS = CONTACTS_COUNT.map((_, contact_index) => ({
+export const buildContacts = CONTACTS_COUNT.map((_, contact_index) => ({
   id: contact_index + 1,
   name: (contact_index + 1) % 2 === 0 ? "Jacob Jones" : "Ronald Richards",
   email: "albert@borer.com",
   createdAt: "Feb, 5, 2021",
 }));
 
-export const COLUMNS = ({ setIsShowDeleteAlert }) => [
+export const buildColumns = ({ setIsShowDeleteAlert }) => [
   {
     title: "Name & Role",
     dataIndex: "name",
@@ -34,20 +46,6 @@ export const COLUMNS = ({ setIsShowDeleteAlert }) => [
   },
   {
     align: "right",
-    render: () => (
-      <Dropdown buttonStyle="text" icon={MenuHorizontal}>
-        <Dropdown.Menu>
-          <Dropdown.MenuItem.Button>
-            {t("common.actionDropdown.edit")}
-          </Dropdown.MenuItem.Button>
-          <Dropdown.MenuItem.Button onClick={() => setIsShowDeleteAlert(true)}>
-            {t("common.actionDropdown.delete")}
-          </Dropdown.MenuItem.Button>
-        </Dropdown.Menu>
-      </Dropdown>
-    ),
+    render: () => renderActionDropdown(setIsShowDeleteAlert),
   },
 ];
-
-export const DEFAULT_PAGE_SIZE = 10;
-export const TOTAL_COUNT = 100;

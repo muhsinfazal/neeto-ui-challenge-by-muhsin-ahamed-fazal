@@ -12,7 +12,7 @@ const Create = ({ isPaneOpen, onClose }) => {
     <Pane isOpen={isPaneOpen} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          {t("common.pane.title", { entity: "Contact" })}
+          {t("common.pane.title", { entity: t("entity.contact") })}
         </Typography>
       </Pane.Header>
       <Form onClose={onClose} />

@@ -13,7 +13,9 @@ const Form = ({ onClose }) => {
 
   const handleSubmit = async () => {
     try {
-      Toastr.success(t("common.toaster.success.create", { entity: "Contact" }));
+      Toastr.success(
+        t("common.toaster.success.create", { entity: t("entity.contact") })
+      );
       onClose();
     } catch (error) {
       logger.error(error);

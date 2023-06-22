@@ -14,13 +14,13 @@ import List from "./List";
 import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
+  const { t } = useTranslation();
+
   const [isLoading, setIsLoading] = useState(true);
   const [isShowNewNotePane, setIsShowNewNotePane] = useState(false);
   const [isShowDeleteAlert, setIsShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [notes, setNotes] = useState([]);
-
-  const { t } = useTranslation();
 
   useEffect(() => {
     fetchNotes();
@@ -51,7 +51,7 @@ const Notes = () => {
         actionBlock={
           <Button
             icon={Plus}
-            label={t("common.header.add", { entity: "Note" })}
+            label={t("common.header.add", { entity: t("entity.note") })}
             size="small"
             onClick={() => setIsShowNewNotePane(true)}
           />
@@ -59,7 +59,7 @@ const Notes = () => {
         searchProps={{
           value: searchTerm,
           placeholder: t("common.header.searchPlaceholder"),
-          onChange: e => setSearchTerm(e.target.value),
+          onChange: event => setSearchTerm(event.target.value),
         }}
       />
       {notes.length ? (
@@ -79,7 +79,7 @@ const Notes = () => {
         showPane={isShowNewNotePane}
       />
       <DeleteAlert
-        entity="Note"
+        entity={t("entity.note")}
         isOpen={isShowDeleteAlert}
         onClose={() => setIsShowDeleteAlert(false)}
       />
