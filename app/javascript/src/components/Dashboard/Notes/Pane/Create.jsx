@@ -15,7 +15,7 @@ const Create = ({ fetchNotes, showPane, setShowPane }) => {
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          {t("common.pane.title", { entity: "Note" })}
+          {t("common.pane.title", { entity: t("entity.note") })}
         </Typography>
       </Pane.Header>
       <Form

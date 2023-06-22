@@ -24,7 +24,7 @@ const Contacts = () => {
         actionBlock={
           <Button
             icon={Plus}
-            label={t("common.header.add", { entity: "Contact" })}
+            label={t("common.header.add", { entity: t("entity.contact") })}
             size="small"
             onClick={() => setIsPaneOpen(true)}
           />
@@ -41,7 +41,7 @@ const Contacts = () => {
         onClose={() => setIsPaneOpen(false)}
       />
       <DeleteAlert
-        entity="Contact"
+        entity={t("entity.contact")}
         isOpen={isShowDeleteAlert}
         onClose={() => setIsShowDeleteAlert(false)}
       />

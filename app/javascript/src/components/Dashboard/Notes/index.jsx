@@ -51,7 +51,7 @@ const Notes = () => {
         actionBlock={
           <Button
             icon={Plus}
-            label={t("common.header.add", { entity: "Note" })}
+            label={t("common.header.add", { entity: t("entity.note") })}
             size="small"
             onClick={() => setIsShowNewNotePane(true)}
           />
@@ -79,7 +79,7 @@ const Notes = () => {
         showPane={isShowNewNotePane}
       />
       <DeleteAlert
-        entity="Note"
+        entity={t("entity.note")}
         isOpen={isShowDeleteAlert}
         onClose={() => setIsShowDeleteAlert(false)}
       />

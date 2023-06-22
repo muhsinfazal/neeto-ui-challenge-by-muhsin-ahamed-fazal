@@ -1,5 +1,7 @@
 {
   "entity": {
+    "note": "Note",
+    "contact": "Contact",
     "owner": "Owner"
   },
   "common": {
