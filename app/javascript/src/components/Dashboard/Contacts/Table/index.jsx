@@ -2,13 +2,14 @@ import React from "react";
 
 import { Table as NeetoTable } from "neetoui";
 
-import { COLUMNS, CONTACTS, DEFAULT_PAGE_SIZE, TOTAL_COUNT } from "./constants";
+import { DEFAULT_PAGE_SIZE, TOTAL_COUNT } from "./constants";
+import { buildColumns, buildContacts } from "./utils";
 
 const Table = ({ setIsShowDeleteAlert }) => (
   <NeetoTable
-    columnData={COLUMNS({ setIsShowDeleteAlert })}
+    columnData={buildColumns({ setIsShowDeleteAlert })}
     defaultPageSize={DEFAULT_PAGE_SIZE}
-    rowData={CONTACTS}
+    rowData={buildContacts}
     totalCount={TOTAL_COUNT}
   />
 );
